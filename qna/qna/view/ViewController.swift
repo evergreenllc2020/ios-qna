@@ -34,9 +34,20 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         setBorderforUIText(documentText)
         setBorderforUIText(questionText)
         setBorderforUIText(answerText)
-        documentText.text = "The quick brown fox jumps over the lethargic dog."
-        questionText.text = "who jumps over the lethargic dog?"
+        //documentText.text = "The quick brown fox jumps over the lethargic dog."
+        answerText.isHidden = true
+        
+        
+        documentText.text = "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24 times to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the golden anniversary with various gold-themed initiatives, as well as temporarily suspending the tradition of naming each Super Bowl game with Roman numerals under which the game would have been known as Super Bowl , so that the logo could prominently feature the Arabic numerals 50."
+        
+        
+        //questionText.text = "who jumps over the lethargic dog?"
+        
+        questionText.text = "Speak a question or type a question?"
+        
         mic.isEnabled = false
+        mic.setTitle("Start Speaking Question", for: .normal)
+        
         speechRecognizer?.delegate = self
         requestSpeechAuthorization()
         
@@ -107,8 +118,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             DispatchQueue.main.async {
                 
                 let location = answer.startIndex.utf16Offset(in: docText)
-                //let length = answer.endIndex.utf16Offset(in: docText) - location
-                
+                let length = answer.endIndex.utf16Offset(in: docText) - location
+                let answerRange = NSRange(location: location, length: length)
                 
                 
                 
@@ -121,6 +132,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 print(finalAnswer)
                 self.answerText.text = finalAnswer
                 self.utterText(finalAnswer)
+                self.highlightAnswer(answerRange: answerRange)
         
                 
                 
@@ -148,10 +160,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             mic.isEnabled = false
-            mic.setTitle("Start Recording", for: .normal)
+            mic.setTitle("Start Speaking Question", for: .normal)
         } else {
             startSpeechRecognition()
-            mic.setTitle("Stop Recording", for: .normal)
+            mic.setTitle("Stop Speaking Question", for: .normal)
         }
         
     }
@@ -166,6 +178,26 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
           utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
           let synth = AVSpeechSynthesizer()
           synth.speak(utterance)
+        
+        
+    }
+    
+    
+    func highlightAnswer(answerRange: NSRange)
+    {
+        let semiTextColor = documentText.textColor!
+        let helveticaNeue17 = UIFont(name: "HelveticaNeue", size: 17)!
+        let bodyFont = UIFontMetrics(forTextStyle: .body).scaledFont(for: helveticaNeue17)
+        let fullTextColor = UIColor.yellow
+        let mutableAttributedText = NSMutableAttributedString(string: self.documentText.text,
+        attributes: [.foregroundColor: semiTextColor,
+                     .font: bodyFont])
+        
+        mutableAttributedText.addAttributes([.backgroundColor: fullTextColor],
+        range: answerRange)
+        self.documentText.attributedText = mutableAttributedText
+        
+        
         
         
     }

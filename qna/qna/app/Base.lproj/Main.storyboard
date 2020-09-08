@@ -15,67 +15,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FWh-bW-4ol">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FWh-bW-4ol">
                                 <rect key="frame" x="10" y="54" width="394" height="798"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZK-NQ-BaS">
-                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wqp-xO-bXb">
-                                        <rect key="frame" x="0.0" y="44.5" width="352" height="281"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6bZ-5m-a3w">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="302.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZK-NQ-BaS">
+                                                <rect key="frame" x="148" y="0.0" width="88.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqp-xO-bXb">
+                                                <rect key="frame" x="16" y="21.5" width="352" height="281"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="281" id="6BR-ij-z8O"/>
+                                                    <constraint firstAttribute="width" constant="352" id="yQy-PY-obx"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gEI-dK-vfR">
+                                        <rect key="frame" x="0.0" y="360.5" width="384" height="157.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt0-NL-pHl">
+                                                <rect key="frame" x="155.5" y="0.0" width="73.5" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.5" id="tU7-CJ-dGi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uVp-HJ-lSh">
+                                                <rect key="frame" x="15" y="21.5" width="354" height="97"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="97" id="XJf-a2-OZB"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sH-Ou-YdF">
+                                                <rect key="frame" x="22" y="119.5" width="340" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="Start Speaking Question">
+                                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="micPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3C2-xE-5vH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="281" id="6BR-ij-z8O"/>
+                                            <constraint firstAttribute="trailing" secondItem="6sH-Ou-YdF" secondAttribute="trailing" constant="22" id="3L7-ue-5qR"/>
+                                            <constraint firstItem="uVp-HJ-lSh" firstAttribute="leading" secondItem="gEI-dK-vfR" secondAttribute="leading" constant="15" id="e4I-yT-uPi"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt0-NL-pHl">
-                                        <rect key="frame" x="0.0" y="349.5" width="73.5" height="20.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20.5" id="tU7-CJ-dGi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sH-Ou-YdF">
-                                        <rect key="frame" x="0.0" y="394" width="344" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Button" image="mic" catalog="system"/>
-                                        <connections>
-                                            <action selector="micPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3C2-xE-5vH"/>
-                                        </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uVp-HJ-lSh">
-                                        <rect key="frame" x="0.0" y="444.5" width="380" height="97"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="97" id="XJf-a2-OZB"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jov-Oc-MYv">
-                                        <rect key="frame" x="0.0" y="565.5" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="576" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="O1h-AF-eCY"/>
                                             <constraint firstAttribute="height" constant="50" id="rDG-YI-h9J"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Find Answer"/>
                                         <connections>
                                             <action selector="findAnswerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSk-eG-tG0"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUc-U5-Q5h">
-                                        <rect key="frame" x="0.0" y="639.5" width="61.5" height="20.5"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUc-U5-Q5h">
+                                        <rect key="frame" x="0.0" y="628.5" width="61.5" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="hrF-hH-rhF"/>
                                         </constraints>
@@ -97,10 +115,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Jov-Oc-MYv" secondAttribute="trailing" constant="60" id="Sfn-Pl-1XX"/>
-                                    <constraint firstAttribute="trailing" secondItem="6sH-Ou-YdF" secondAttribute="trailing" constant="50" id="XOg-ge-m0y"/>
-                                    <constraint firstAttribute="trailing" secondItem="uVp-HJ-lSh" secondAttribute="trailing" constant="14" id="Zqb-2N-dSg"/>
                                     <constraint firstAttribute="trailing" secondItem="Naq-dv-Ynh" secondAttribute="trailing" constant="20" id="fYi-Em-L38"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wqp-xO-bXb" secondAttribute="trailing" constant="42" id="x7T-kb-z3g"/>
+                                    <constraint firstAttribute="trailing" secondItem="gEI-dK-vfR" secondAttribute="trailing" constant="10" id="gDH-Vq-ruW"/>
+                                    <constraint firstAttribute="trailing" secondItem="6bZ-5m-a3w" secondAttribute="trailing" constant="10" id="y2S-sw-ExA"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -125,7 +142,4 @@
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="mic" catalog="system" width="108" height="128"/>
-    </resources>
 </document>
