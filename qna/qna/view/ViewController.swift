@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var answerText: UITextView!
     
+     let bert = BERT()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,47 @@ class ViewController: UIViewController {
     @IBAction func findAnswerTapped(_ sender: UIButton) {
         
         print("hello world!!!!")
+        let searchText = questionText.text!
+        let docText = documentText.text!
+        
+        answerText.text = "finding aswer. Please wait ....."
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            let answer = self.bert.findAnswer(for: searchText, in: docText)
+            
+            DispatchQueue.main.async {
+                
+                let location = answer.startIndex.utf16Offset(in: docText)
+                //let length = answer.endIndex.utf16Offset(in: docText) - location
+                
+                
+                
+                
+                let start = docText.index(docText.startIndex, offsetBy: location)
+                let end = docText.index(docText.endIndex, offsetBy: -1*(docText.count - answer.endIndex.utf16Offset(in: docText)))
+                let range = start..<end
+
+                let subStr = docText[range]  // play
+                let finalAnswer = String(subStr)
+                print(finalAnswer)
+                self.answerText.text = finalAnswer
+                
+                
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+        
         
     }
     
